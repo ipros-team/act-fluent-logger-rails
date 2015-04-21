@@ -32,7 +32,6 @@ create config/fluent-logger.yml
       messages_type: "string"
       add_host: true
       add_stage: true
-      every_flush: true
 
     development:
       <<: *default
@@ -76,6 +75,9 @@ create config/batch-fluent-logger.yml
 
  * fluent_host: The host name of Fluentd.
  * fluent_port: The port number of Fluentd.
+ * add_host: add hostname in record.
+ * add_stage: add Rails.env in record.
+ * every_flush: batch mode.
  * tag: The tag of the Fluentd event.
  * messages_type: The type of log messags. 'string' or 'array'.
    If it is 'string', the log messages is a String.
