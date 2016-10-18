@@ -84,7 +84,7 @@ module ActFluentLoggerRails
       if message.encoding == Encoding::UTF_8
         @messages << message
       else
-        @messages << message.dup.force_encoding(Encoding::UTF_8)
+        @messages << message.to_s.dup.force_encoding(Encoding::UTF_8)
       end
     end
 
